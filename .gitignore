@@ -1,0 +1,5 @@
+node_modules
+src/__pycache__
+src/include
+src/Lib
+src/Scripts
