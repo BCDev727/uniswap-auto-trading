@@ -21,9 +21,15 @@ TOKEN_LIST = {
     }
 }
 # Wallet on Rospten
+<<<<<<< HEAD
 RECIPIENT_ADDRESS = '0x3aC647211316Bd1353619EbbFb1CBc70aB5f4ee5'
 PROVIDER_ADDRESS  = '0x3aC647211316Bd1353619EbbFb1CBc70aB5f4ee5'
 PRIVATE_ADDRESS   = 'Your private key'
+=======
+RECIPIENT_ADDRESS = 'receiver address'
+PROVIDER_ADDRESS  = 'provider address'
+PRIVATE_ADDRESS   = 'Your private address'
+>>>>>>> 04088c040dc17dfdfee0ec3bb4096ffc1eac8130
 # Token Address(WETH)
 WETH_ADDRESS  = '0xc778417E063141139Fce010982780140Aa0cD5Ab'
 # Trading Default amounts
