@@ -202,7 +202,7 @@ class Trader:
         tx_hash = self.w3.toHex(self.w3.keccak(signed_txn.rawTransaction))
         console_log(' > tx: ' + tx_hash)
         status = self.w3.eth.wait_for_transaction_receipt(tx_hash)['status']
-        if status:
+        if status == True:
             console_log(' > Success !!!')
         else:
             console_log(' > Failed ~')
@@ -302,6 +302,7 @@ def onCurrencyOutChanged(e):
 # window
 window.title("Uniswap Trading Bot")
 window.geometry('650x500')
+window.resizable(False, False)
 # tradig type(buy or sell)
 combo_type = Combobox(window, width=6, state='readonly')
 combo_type['values']= ("BUY", "SELL")
@@ -434,6 +435,8 @@ def trade_exit():
 def setInterval(timer, task):
     if task():
         Timer(timer, setInterval, [timer, task]).start()
+        return True
+    return False
 
 # Auto Trading  
 def auto_trade():
@@ -450,7 +453,7 @@ def auto_trade():
         console_log('>>> ' + type + ' '+ token +' => ETH, Price: ' + str(price) + '$')
         amountIn = DEFAULT_SELL_IN   
     trader.updateUI(type, token, price, amountIn)
-    if isEnoughBalance(token):
+    if not isEnoughBalance(token):
         global isAutoStarted
         isAutoStarted = False
         return 0

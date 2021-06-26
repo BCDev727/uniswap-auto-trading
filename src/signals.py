@@ -13,7 +13,7 @@ TEST_SIGNALS = [
     {
         'type' : 'BUY',
         'token': 'DAI2',
-        'price': 8.34
+        'price': 12.34
     },
     {
         'type' : 'BUY',
